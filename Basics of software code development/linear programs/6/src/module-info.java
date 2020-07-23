@@ -1,0 +1,2 @@
+module linearProgram6 {
+}
