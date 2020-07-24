@@ -12,7 +12,7 @@ public class Main {
 		int y = sc.nextInt();
 		int z = sc.nextInt();
 		
-		if(x * y <= A * B) {
+		if(x <= A && y<= B) {
 			System.out.println("Brick will pass");
 		}else {
 			System.out.println("Brick will not pass");
