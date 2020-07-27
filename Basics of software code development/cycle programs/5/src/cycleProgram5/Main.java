@@ -14,7 +14,6 @@ public class Main {
 			a=0;
 			a+=((1)/(Math.pow(2, i))) + ((1)/(Math.pow(3, i)));
 			sum+=a;
-			System.out.println(a);
 		}
 		System.out.println(sum);
 		
