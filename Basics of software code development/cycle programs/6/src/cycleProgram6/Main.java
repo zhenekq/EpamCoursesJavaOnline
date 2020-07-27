@@ -7,7 +7,6 @@ public class Main {
 			char ch = (char)i;
 			int f = ch;
 			System.out.println(ch+" = " + f);
-			
 		}
 	}
 
