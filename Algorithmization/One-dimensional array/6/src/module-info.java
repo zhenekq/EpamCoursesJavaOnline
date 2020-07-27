@@ -1,0 +1,2 @@
+module OneDimensionalArray6 {
+}
