@@ -16,7 +16,25 @@ public class Main {
 		Random random = new Random();
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
-				array[j][i]=0;
+				array[i][j]=random.nextInt(16);
+			}
+		}
+		for(int i=0;i<N;i++) {
+			for(int j=0;j<M;j++) {
+				System.out.print(array[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println("\nFrom less, to huge:");
+		for(int i=0;i<N;i++) {
+			for(int j=M-1;j>0;j--) {
+				for(int z = 0;z<j;z++) {
+					if(array[z][i]>array[z+1][i]) {
+						int helpVar = array[z][i];
+						array[z][i]=array[z+1][i];
+						array[z+1][i]=helpVar;
+					}
+				}
 			}
 		}
 		for(int i=0;i<N;i++) {
@@ -26,38 +44,24 @@ public class Main {
 			System.out.println();
 		}
 		
-		int randomIndex = 0;
-		int arrayOfIndexes[] = new int[N];
-		int varN = N;
-		System.out.println();
+		System.out.println("\nFrom huge, to less:");
 		for(int i=0;i<N;i++) {
-			int counter = 0;
-			for(int j=0;j<M;j++) {
-				if(counter==i) {
-					break;
+			for(int j=M-1;j>0;j--) {
+				for(int z = 0;z<j;z++) {
+					if(array[z][i]<array[z+1][i]) {
+						int helpVar = array[z][i];
+						array[z][i]=array[z+1][i];
+						array[z+1][i]=helpVar;
+					}
 				}
-				randomIndex = random.nextInt(varN);
-				if(array[randomIndex][i] == 1 && randomIndex!=N-1 && randomIndex!=0 && array[randomIndex+1][i]!=1) {
-					array[randomIndex+1][i]=1;
-				}else if(array[randomIndex][i] == 1 && randomIndex!=N-1 && randomIndex!=0 && array[randomIndex-1][i]!=1) {
-				array[randomIndex-1][i] = 1;
-				}else {
-					array[randomIndex][i] = 1;
-				}
-				counter++;
-				System.out.print(randomIndex+" ");
 			}
-			System.out.println();
 		}
-		
-		System.out.println();
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<M;j++) {
 				System.out.print(array[i][j]+" ");
 			}
 			System.out.println();
 		}
-		
 		
 	}
 
